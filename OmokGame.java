@@ -14,7 +14,7 @@ public class OmokGame extends JFrame implements GameStatusListener {
     public OmokGame() {
         setTitle("Omok Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 650);
+        setSize(1000, 800);
         setLocationRelativeTo(null);
 
         cardLayout = new CardLayout();
@@ -22,8 +22,13 @@ public class OmokGame extends JFrame implements GameStatusListener {
 
         mainMenuSetup();
 
+        pack();
+        setMinimumSize(new Dimension(800, 800));
+        setVisible(true);
+
         boardPanel = new BoardPanel();
-        boardPanel.setStatusListener(this); // Register this class as the listener
+        boardPanel.setStatusListener(this);
+        boardPanel.setPreferredSize(new Dimension(1000,800));
 
         statusLabel = new JLabel("Welcome to Omok!");
         add(statusLabel, BorderLayout.NORTH);
@@ -48,6 +53,7 @@ public class OmokGame extends JFrame implements GameStatusListener {
                 }
             }
         });
+        mainMenuPanel.setPreferredSize(new Dimension(1000,800));
         cardPanel.add(mainMenuPanel, "MAIN_MENU");
         cardLayout.show(cardPanel, "MAIN_MENU");
     }

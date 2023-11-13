@@ -160,7 +160,7 @@ public class BoardPanel extends JPanel {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 int x = j * CELL_SIZE;
                 int y = i * CELL_SIZE;
-                g2d.setColor(Color.WHITE);
+                g2d.setColor(Color.GRAY);
                 g2d.fillRect(x, y, CELL_SIZE, CELL_SIZE);
                 g2d.setColor(Color.BLACK);
                 g2d.drawRect(x, y, CELL_SIZE, CELL_SIZE);
@@ -171,7 +171,7 @@ public class BoardPanel extends JPanel {
                 if (boardState[i][j] != -1) {
                     g2d.setColor(pieceColors[boardState[i][j]]);
                     g2d.fillOval(x + (CELL_SIZE - PIECE_SIZE) / 2, y + (CELL_SIZE - PIECE_SIZE) / 2, PIECE_SIZE, PIECE_SIZE);
-                    g2d.setStroke(new BasicStroke(2));
+                    g2d.setStroke(new BasicStroke(1));
                     g2d.setColor(boardState[i][j] == 0 ? Color.WHITE : Color.BLACK);
                     g2d.drawOval(x + (CELL_SIZE - PIECE_SIZE) / 2, y + (CELL_SIZE - PIECE_SIZE) / 2, PIECE_SIZE, PIECE_SIZE);
                 }
